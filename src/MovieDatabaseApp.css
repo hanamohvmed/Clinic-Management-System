@@ -1,0 +1,280 @@
+.movie-hub-container {
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+    background-color: #111;
+    color: #fff;
+  }
+  
+  .header {
+    background-color: #000;
+    padding: 1rem 0;
+    border-bottom: 1px solid #333;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .highlight {
+    color: #e50914;
+  }
+  
+  .filter-button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+  }
+  
+  .search-icon {
+    color: #888;
+    margin-right: 0.5rem;
+  }
+  
+  .search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #fff;
+    outline: none;
+  }
+  
+  .filters-panel {
+    margin-top: 1rem;
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 4px;
+  }
+  
+  .filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .filters-title {
+    font-size: 1.2rem;
+  }
+  
+  .clear-filters {
+    background: none;
+    color: #e50914;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .select {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #222;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 4px;
+  }
+  
+  .option {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .movies-section {
+    margin-top: 2rem;
+  }
+  
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #444;
+    border-top-color: #e50914;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .no-results {
+    text-align: center;
+    color: #ccc;
+    padding: 2rem;
+  }
+  
+  .no-results-text {
+    font-size: 1rem;
+  }
+  
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .movie-card {
+    background-color: #1a1a1a;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .poster-container {
+    position: relative;
+  }
+  
+  .poster-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .poster-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, #000, transparent);
+  }
+  
+  .rating-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #e50914;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .star-icon {
+    color: gold;
+  }
+  
+  .rating-text {
+    font-size: 0.9rem;
+  }
+  
+  .movie-details {
+    padding: 0.5rem;
+  }
+  
+  .movie-title {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .movie-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+    color: #ccc;
+  }
+  
+  .genre-list {
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+    color: #aaa;
+  }
+  
+  .movie-overview {
+    font-size: 0.8rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .pagination-button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .pagination-info {
+    color: #ccc;
+  }
+  
+  .api-warning {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #222;
+    border-left: 4px solid #e50914;
+  }
+  
+  .api-warning-text {
+    color: #ccc;
+    font-size: 0.9rem;
+  }
+  
+  .api-link {
+    color: #e50914;
+    text-decoration: underline;
+  }
+  
