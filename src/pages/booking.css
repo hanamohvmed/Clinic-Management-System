@@ -1,0 +1,129 @@
+.booking-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-radius: 8px;
+  }
+  
+  .h1 {
+    text-align: center;
+    color: #222;
+    font-size: 1.8rem;
+  }
+  
+  .label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+  }
+  
+  .input:focus {
+    border-color: #1e90ff;
+    outline: none;
+  }
+  
+  textarea.input {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .button {
+    margin-top: 1.5rem;
+    width: 100%;
+    background-color: #1e90ff;
+    color: white;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #007bff;
+  }
+  
+  .confirmation-card {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+  }
+  
+  .confirmation-card h2 {
+    color: #111;
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+  }
+  
+  .confirmation-details {
+    margin: 1rem 0;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  /* ✅ Responsive Media Query */
+  @media (max-width: 768px) {
+    .booking-container {
+      padding: 1rem;
+    }
+  
+    .h1 {
+      font-size: 1.5rem;
+    }
+  
+    .label {
+      font-size: 0.95rem;
+    }
+  
+    .input,
+    .button {
+      font-size: 0.95rem;
+      padding: 0.65rem;
+    }
+  
+    .confirmation-card h2 {
+      font-size: 1.2rem;
+    }
+  
+    .confirmation-details {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .booking-container {
+      padding: 1rem 0.5rem;
+    }
+  
+    .h1 {
+      font-size: 1.3rem;
+    }
+  
+    .input,
+    .button {
+      font-size: 0.9rem;
+    }
+  
+    .confirmation-details {
+      font-size: 0.9rem;
+    }
+  }
+  
