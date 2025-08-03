@@ -148,7 +148,7 @@ ul {
   box-shadow: 0px 0px 17px #dddddd;
 }
 .reg-card {
-  min-height: 830px;
+  min-height: 725;
   max-width: 550px;
   width: 100%;
   display: flex;
@@ -158,6 +158,13 @@ ul {
   border-radius: 15px;
   padding: 35px;
   box-shadow: 0px 0px 17px #dddddd;
+}
+
+.role-ques {
+  text-align: center;
+  text-decoration: none;
+  margin: -15px 0 7px;
+  color: var(--main-blue);
 }
 
 .login-text {
@@ -254,16 +261,6 @@ ul {
   color: var(--main-blue);
 }
 
-.form select {
-  min-width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  background-color: #f5faff;
-  border: 2px solid #dae7ff;
-  font-size: 16px;
-  margin-bottom: 20px;
-  outline: none;
-}
 @media (max-width: 567px) {
   .form select {
     min-width: 90%;

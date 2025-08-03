@@ -73,7 +73,7 @@ export function Login() {
 
           <p className="sign-text">
             Don't have an account?{" "}
-            <Link className="sign-link" to="/register">
+            <Link className="sign-link" to="/registerDoctor">
               Register
             </Link>
           </p>

@@ -7,7 +7,7 @@ const onSubmit = () => {
   console.log("Submited");
 };
 
-export default function Register() {
+export default function RegisterPatient() {
   const [showPassword, setShowPassword] = useState(false);
 
   const passwordVisibility = () => {
@@ -28,16 +28,12 @@ export default function Register() {
   return (
     <div className="register-page">
       <div className="reg-card">
-        <h3 className="login-text">Registration</h3>
-        <form className="form" onSubmit={handleSubmit}>
-          <label htmlFor="role">Role</label>
-          <div className="role-input-container">
-            <select name="role" id="role">
-              <option value="doctor">Doctor</option>
-              <option value="patient">Patient</option>
-            </select>
-          </div>
+        <h3 className="login-text">Patient Register</h3>
+        <Link className="role-ques" to="/RegisterDoctor">
+          Are you a doctor?
+        </Link>
 
+        <form className="form" onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
           <div className="username-input-container">
             <input

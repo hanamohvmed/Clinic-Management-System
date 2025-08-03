@@ -1,13 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import { Login } from "./pages/Login";
-import Register from "./pages/Register";
+import RegisterDoctor from "./pages/RegisterDoctor";
+import RegisterPatient from "./pages/RegisterPatient";
 import { WelcomePage } from "./pages/WelcomePage";
 import "./App.css";
 
 const routes = [
   { path: "/", element: <WelcomePage /> },
   { path: "/login", element: <Login /> },
-  { path: "/register", element: <Register /> },
+  { path: "/registerDoctor", element: <RegisterDoctor /> },
+  { path: "/RegisterPatient", element: <RegisterPatient /> },
   { path: "*", element: <WelcomePage /> }
 ];
 
