@@ -3,7 +3,7 @@ import { Login } from "./pages/Login";
 import RegisterDoctor from "./pages/RegisterDoctor";
 import RegisterPatient from "./pages/RegisterPatient";
 import { WelcomePage } from "./pages/WelcomePage";
-import "./App.css";
+import "./styles.css";
 
 const routes = [
   { path: "/", element: <WelcomePage /> },
