@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import { useState } from "react";
-import { loginSchema } from "../schemas";
+import { loginSchema } from "../../schemas/index";
 import { Link } from "react-router-dom";
 
 const onSubmit = () => {
@@ -18,10 +18,10 @@ export function Login() {
     useFormik({
       initialValues: {
         email: "",
-        password: ""
+        password: "",
       },
       validationSchema: loginSchema,
-      onSubmit
+      onSubmit,
     });
   return (
     <div className="login-page">

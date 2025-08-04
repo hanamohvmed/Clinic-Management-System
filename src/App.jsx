@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import { Login } from "./pages/Login";
-import RegisterDoctor from "./pages/RegisterDoctor";
-import RegisterPatient from "./pages/RegisterPatient";
-import { WelcomePage } from "./pages/WelcomePage";
-import MyBookings from "./pages/MyBookings";
-import "./styles.css";
+import { Login } from "./pages/auth/Login";
+import RegisterDoctor from "./pages/auth/RegisterDoctor";
+import RegisterPatient from "./pages/auth/RegisterPatient";
+import { WelcomePage } from "./pages/shared/WelcomePage";
+import MyBookings from "./pages/patient/MyBookings";
+import "./App.css";
 
 const routes = [
   { path: "/", element: <WelcomePage /> },

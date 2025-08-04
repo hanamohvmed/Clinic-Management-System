@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import { useState } from "react";
-import { registerSchema } from "../schemas";
+import { registerSchema } from "../../schemas/index";
 import { Link } from "react-router-dom";
 
 const onSubmit = () => {
@@ -20,10 +20,10 @@ export default function RegisterPatient() {
         username: "",
         email: "",
         password: "",
-        confirmPassword: ""
+        confirmPassword: "",
       },
       validationSchema: registerSchema,
-      onSubmit
+      onSubmit,
     });
   return (
     <div className="register-page">
