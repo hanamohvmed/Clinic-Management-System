@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./MyBookings.css";
 
-// Mock data for demonstration
 const mockBookings = [
   {
     id: "booking_123",
@@ -74,12 +73,10 @@ const MyBookings = () => {
   const [cancellingBooking, setCancellingBooking] = useState(null);
   const [toast, setToast] = useState({ show: false, message: "", type: "" });
 
-  // Simulate API call
   useEffect(() => {
     const fetchBookings = async () => {
       setLoading(true);
       try {
-        // Simulate API delay
         await new Promise((resolve) => setTimeout(resolve, 1000));
         setBookings(mockBookings);
       } catch (error) {
@@ -92,14 +89,12 @@ const MyBookings = () => {
     fetchBookings();
   }, []);
 
-  // Filter bookings based on current filter and search
   const filteredBookings = bookings.filter((booking) => {
     const now = new Date();
     const appointmentDate = new Date(booking.appointmentDateTime);
     const isUpcoming = appointmentDate > now;
     const isPast = appointmentDate <= now;
 
-    // Status-based filtering
     const isConfirmed = booking.status === "confirmed";
     const isCompleted =
       booking.status === "completed" ||
@@ -108,10 +103,8 @@ const MyBookings = () => {
 
     let matchesFilter;
     if (filter === "upcoming") {
-      // Show confirmed appointments OR future appointments that aren't completed
       matchesFilter = isConfirmed || (isUpcoming && !isCompleted);
     } else {
-      // Show completed/cancelled appointments OR past appointments
       matchesFilter = isCompleted || (isPast && !isConfirmed);
     }
 
@@ -124,15 +117,14 @@ const MyBookings = () => {
     return matchesFilter && matchesSearch;
   });
 
-  // Sort bookings
   const sortedBookings = filteredBookings.sort((a, b) => {
     const dateA = new Date(a.appointmentDateTime);
     const dateB = new Date(b.appointmentDateTime);
 
     if (filter === "upcoming") {
-      return dateA - dateB; // Earliest first
+      return dateA - dateB;
     } else {
-      return dateB - dateA; // Most recent first
+      return dateB - dateA;
     }
   });
 
@@ -141,7 +133,6 @@ const MyBookings = () => {
     setShowCancelModal(false);
 
     try {
-      // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
       setBookings((prev) =>
@@ -237,14 +228,12 @@ const MyBookings = () => {
 
   return (
     <div className="my-bookings-container">
-      {/* Header */}
       <div className="bookings-header">
         <div className="header-content">
           <h1>My Bookings</h1>
           <p className="subtitle">Manage and track your appointments</p>
         </div>
 
-        {/* Filter Tabs */}
         <div className="filter-tabs">
           <button
             className={`tab ${filter === "upcoming" ? "active" : ""}`}
@@ -259,20 +248,18 @@ const MyBookings = () => {
             Past ({getPastCount()})
           </button>
         </div>
+
+        <div className="search-section">
+          <input
+            type="text"
+            placeholder="Search by doctor name or specialty..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+          />
+        </div>
       </div>
 
-      {/* Search */}
-      <div className="search-section">
-        <input
-          type="text"
-          placeholder="Search by doctor name or specialty..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="search-input"
-        />
-      </div>
-
-      {/* Bookings List */}
       <div className="bookings-list">
         {sortedBookings.length === 0 ? (
           <div className="empty-state">
@@ -346,7 +333,6 @@ const MyBookings = () => {
         )}
       </div>
 
-      {/* Cancel Confirmation Modal */}
       {showCancelModal && (
         <div
           className="modal-overlay"
@@ -381,7 +367,6 @@ const MyBookings = () => {
         </div>
       )}
 
-      {/* Toast Notification */}
       {toast.show && (
         <div className={`toast ${toast.type}`}>{toast.message}</div>
       )}
