@@ -51,7 +51,7 @@
   background-color: white;
   border-radius: 15px;
   padding: 35px;
-  box-shadow: 0px 0px 17px #dddddd;
+
   margin-bottom: 2rem;
 }
 
@@ -159,7 +159,7 @@
   border: 1px solid #e5e7eb;
   border-radius: 15px;
   padding: 35px;
-  box-shadow: 0px 0px 17px #dddddd;
+
   transition: all 0.2s ease;
 }
 
@@ -306,7 +306,6 @@
   color: var(--text-gray);
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0px 0px 17px #dddddd;
 }
 
 .empty-state h3 {
