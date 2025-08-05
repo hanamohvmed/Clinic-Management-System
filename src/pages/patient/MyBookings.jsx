@@ -71,6 +71,7 @@ const MyBookings = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showCancelModal, setShowCancelModal] = useState(false);
   const [cancellingBooking, setCancellingBooking] = useState(null);
+  const [bookingToCancel, setBookingToCancel] = useState(null);
   const [toast, setToast] = useState({ show: false, message: "", type: "" });
 
   useEffect(() => {
@@ -131,6 +132,7 @@ const MyBookings = () => {
   const handleCancelBooking = async (bookingId) => {
     setCancellingBooking(bookingId);
     setShowCancelModal(false);
+    setBookingToCancel(null);
 
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -319,7 +321,10 @@ const MyBookings = () => {
                     className={`cancel-button ${
                       cancellingBooking === booking.id ? "cancelling" : ""
                     }`}
-                    onClick={() => setShowCancelModal(true)}
+                    onClick={() => {
+                      setBookingToCancel(booking);
+                      setShowCancelModal(true);
+                    }}
                     disabled={cancellingBooking === booking.id}
                   >
                     {cancellingBooking === booking.id
@@ -333,17 +338,21 @@ const MyBookings = () => {
         )}
       </div>
 
-      {showCancelModal && (
+      {showCancelModal && bookingToCancel && (
         <div
           className="modal-overlay"
-          onClick={() => setShowCancelModal(false)}
+          onClick={() => {
+            setShowCancelModal(false);
+            setBookingToCancel(null);
+          }}
         >
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>Cancel Appointment?</h2>
             <p>
-              Are you sure you want to cancel your appointment with Dr. Sara
-              El-Masry on Tuesday, Jan 15, 2025 · 3:30 PM? This action cannot be
-              undone.
+              Are you sure you want to cancel your appointment with{" "}
+              {bookingToCancel.doctor.name} on{" "}
+              {formatDateTime(bookingToCancel.appointmentDateTime)}? This action
+              cannot be undone.
             </p>
             <p className="cancellation-policy">
               Note: Cancellations less than 24 hours before the appointment may
@@ -352,13 +361,16 @@ const MyBookings = () => {
             <div className="modal-actions">
               <button
                 className="cancel-confirm-button"
-                onClick={() => handleCancelBooking("booking_123")}
+                onClick={() => handleCancelBooking(bookingToCancel.id)}
               >
                 Yes, Cancel
               </button>
               <button
                 className="keep-appointment-button"
-                onClick={() => setShowCancelModal(false)}
+                onClick={() => {
+                  setShowCancelModal(false);
+                  setBookingToCancel(null);
+                }}
               >
                 Keep Appointment
               </button>
