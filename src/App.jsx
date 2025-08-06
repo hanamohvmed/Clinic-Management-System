@@ -10,12 +10,15 @@ import UserLayout from "./pages/patient/UserLayout";
 import Home from "./pages/patient/Home";
 import BrowseDoctors from "./pages/patient/BrowseDoctors";
 import Booking from "./pages/patient/booking";
+import DoctorDashboard from "./pages/doctor/DoctorDashboard";
+import PatientBookings from "./pages/doctor/PatientBookings";
 
 const routes = [
   { path: "/", element: <WelcomePage /> },
   { path: "/login", element: <Login /> },
   { path: "/registerDoctor", element: <RegisterDoctor /> },
   { path: "/RegisterPatient", element: <RegisterPatient /> },
+  { path: "/doctor-dashboard", element: <DoctorDashboard /> },
   {
     path: "/home",
     element: <UserLayout />,

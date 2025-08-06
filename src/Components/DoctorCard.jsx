@@ -3,7 +3,7 @@ import { IoStar } from "react-icons/io5";
 
 function DoctorCard(props) {
   return (
-    <div className="flex flex-col  bg-white p-3 rounded-3xl">
+    <div className="flex flex-col  bg-white p-3 border border-gray-300 rounded-3xl">
       <div>
         <h1 className="text-2xl font-semibold p-1">Dr.{props.name}</h1>
       </div>
