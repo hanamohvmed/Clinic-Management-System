@@ -130,6 +130,7 @@ ul {
   background-image: url(/assets/sidepack.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
