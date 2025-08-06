@@ -4,15 +4,27 @@ import RegisterDoctor from "./pages/auth/RegisterDoctor";
 import RegisterPatient from "./pages/auth/RegisterPatient";
 import { WelcomePage } from "./pages/shared/WelcomePage";
 import MyBookings from "./pages/patient/MyBookings";
+
 import "./App.css";
+import UserLayout from "./pages/patient/UserLayout";
+import Home from "./pages/patient/Home";
+import BrowseDoctors from "./pages/patient/BrowseDoctors";
 
 const routes = [
   { path: "/", element: <WelcomePage /> },
   { path: "/login", element: <Login /> },
   { path: "/registerDoctor", element: <RegisterDoctor /> },
   { path: "/RegisterPatient", element: <RegisterPatient /> },
-  { path: "/my-bookings", element: <MyBookings /> },
   { path: "*", element: <WelcomePage /> },
+  {
+    path: "/home",
+    element: <UserLayout />,
+    children: [
+      { path: "", element: <Home /> },
+      { path: "doctors-list", element: <BrowseDoctors /> },
+      { path: "my-bookings", element: <MyBookings /> },
+    ],
+  },
 ];
 
 const router = createBrowserRouter(routes);
