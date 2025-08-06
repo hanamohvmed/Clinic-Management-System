@@ -9,6 +9,7 @@ import "./App.css";
 import UserLayout from "./pages/patient/UserLayout";
 import Home from "./pages/patient/Home";
 import BrowseDoctors from "./pages/patient/BrowseDoctors";
+import Booking from "./pages/patient/booking";
 
 const routes = [
   { path: "/", element: <WelcomePage /> },
@@ -21,10 +22,11 @@ const routes = [
     children: [
       { path: "", element: <Home /> },
       { path: "doctors-list", element: <BrowseDoctors /> },
-      { path: "my-bookings", element: <MyBookings /> }
-    ]
+      { path: "my-bookings", element: <MyBookings /> },
+      { path: "book-appointment", element: <Booking /> },
+    ],
   },
-  { path: "*", element: <WelcomePage /> }
+  { path: "*", element: <WelcomePage /> },
 ];
 
 const router = createBrowserRouter(routes);

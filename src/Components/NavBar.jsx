@@ -34,9 +34,12 @@ function NavBar() {
           </ul>
         </div>
         <div className="flex gap-4">
-          <button className="cursor-pointer hidden  md:block bg-sky-500 text-amber-50 rounded-3xl p-2 hover:opacity-80 duration-200">
-            Appointment
-          </button>
+          <Link to={"book-appointment"}>
+            <button className="cursor-pointer hidden  md:block bg-sky-500 text-amber-50 rounded-3xl p-2 hover:opacity-80 duration-200">
+              Appointment
+            </button>
+          </Link>
+
           <Link to="/WelcomePage" className="flex items-center">
             <GrLogout className="text-3xl text-sky-500 cursor-pointer" />
           </Link>
@@ -60,9 +63,11 @@ function NavBar() {
             <Link to={"my-bookings"} className="hover:text-sky-500">
               My Appointments
             </Link>
-            <button className="bg-sky-500 text-white rounded-3xl px-4 py-2 hover:opacity-80">
-              Appointment
-            </button>
+            <Link to={"book-appointment"}>
+              <button className="bg-sky-500 text-white rounded-3xl px-4 py-2 hover:opacity-80">
+                Appointment
+              </button>
+            </Link>
           </div>
         </div>
       )}

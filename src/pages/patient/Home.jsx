@@ -1,5 +1,6 @@
 import React from "react";
 import BrowseDoctors from "./BrowseDoctors";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -21,12 +22,11 @@ function Home() {
               Book appointments with top doctors, get personalized care, and
               manage your medical records all in one place.
             </p>
-            <a
-              href="#"
+            <Link to={"book-appointment"}
               className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-sky-500 hover:opacity-80 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 duration-200"
             >
               Book Appointment
-            </a>
+            </Link>
             <a
               href="#"
               className="inline-flex items-center justify-center px-5 py-3 text-base font-medium bg-white text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 duration-200"
