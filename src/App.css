@@ -12,8 +12,6 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  /* margin: 0;
-  padding: 0; */
 }
 
 html {
@@ -71,6 +69,7 @@ ul {
 }
 .welcome .welcome-text {
   font-size: 55px;
+  font-weight: 600;
   color: black;
   text-align: center;
 }
@@ -172,6 +171,7 @@ ul {
 .login-text {
   text-align: center;
   font-size: 32px;
+  font-weight: 600;
   margin: 20px 0;
   color: var(--main-blue);
 }

@@ -15,16 +15,16 @@ const routes = [
   { path: "/login", element: <Login /> },
   { path: "/registerDoctor", element: <RegisterDoctor /> },
   { path: "/RegisterPatient", element: <RegisterPatient /> },
-  { path: "*", element: <WelcomePage /> },
   {
     path: "/home",
     element: <UserLayout />,
     children: [
       { path: "", element: <Home /> },
       { path: "doctors-list", element: <BrowseDoctors /> },
-      { path: "my-bookings", element: <MyBookings /> },
-    ],
+      { path: "my-bookings", element: <MyBookings /> }
+    ]
   },
+  { path: "*", element: <WelcomePage /> }
 ];
 
 const router = createBrowserRouter(routes);

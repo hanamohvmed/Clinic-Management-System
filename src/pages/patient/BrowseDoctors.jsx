@@ -44,7 +44,7 @@ function BrowseDoctors() {
           <div className="flex items-center  justify-center gap-3">
             <h1 className="font-normal text-xl">Filter specialty </h1>
             <button
-              className="bg-gray-200 rounded-xl p-1  "
+              className="cursor-pointer bg-gray-200 rounded-xl p-1  "
               onClick={() => setfiltedUsers(users)}
             >
               Reset
