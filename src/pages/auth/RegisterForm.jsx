@@ -1,12 +1,14 @@
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { registerSchema } from "../../schemas";
 import { Link, useNavigate } from "react-router-dom";
+import AuthContext from "../../store/AuthContext";
 
 
 export default function RegisterForm() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const { register } = useContext(AuthContext);
 
   const passwordVisibility = () => {
     setShowPassword((pass) => !pass);
@@ -14,32 +16,16 @@ export default function RegisterForm() {
 
   const onSubmit = async (values, actions) => {
   try {
-    const response = await fetch("https://localhost:7074/api/Auth/register-patient", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        fullName: values.fullName,
-        email: values.email,
-        password: values.password,
-        birthDate: values.birthDate,
-        gender: values.gender
-      })
-    });
+    await register(
+        values.fullName,
+        values.email,
+        values.password,
+        values.birthDate,
+        values.gender
+      );
 
-    console.log(response);
-
-      if (!response.ok) {
-        throw new Error("Registration failed");
-      }
-
-      const data = await response.json();
-      console.log("Registration successful:", data);
-
-      navigate("/login");
       actions.resetForm();
-
+      navigate("/home");
     } catch (error) {
       console.error("Error:", error.message);
     }

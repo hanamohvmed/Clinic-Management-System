@@ -1,37 +1,24 @@
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useState ,useContext} from "react";
 import { loginSchema } from "../../schemas/index";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-
+import AuthContext from "../../store/AuthContext";
 
 
 
 export function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate()
+  const { login } = useContext(AuthContext); 
+
   const passwordVisibility = () => {
     setShowPassword((pass) => !pass);
   };
 
   const onSubmit = async (values, actions) => {
     try {
-      const response = await fetch("https://localhost:7074/api/Auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
-
-      if (!response.ok) {
-        throw new Error("Invalid email or password");
-      }
-
-      const data = await response.json();
-
-      localStorage.setItem("token", data.token);
+      await login(values.email, values.password);
       navigate("/home");
-
       actions.resetForm();
     } catch (error) {
       console.error("Login failed:", error);
