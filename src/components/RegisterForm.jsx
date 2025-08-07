@@ -13,7 +13,10 @@ export default function RegisterForm({
   switchRoleText
 }) {
   const [showPassword, setShowPassword] = useState(false);
-  const togglePassword = () => setShowPassword((prev) => !prev);
+
+  const passwordVisibility = () => {
+    setShowPassword((pass) => !pass);
+  };
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
@@ -30,7 +33,7 @@ export default function RegisterForm({
   return (
     <div className="register-page">
       <div className="reg-card">
-        <h3 className="login-text">{title}</h3>
+        <h3 className="header-text">{title}</h3>
         <Link className="role-ques" to={switchRolePath}>
           {switchRoleText}
         </Link>
@@ -39,8 +42,9 @@ export default function RegisterForm({
           <label htmlFor="username">Username</label>
           <div className="username-input-container">
             <input
-              type="text"
               id="username"
+              name="username"
+              type="text"
               value={values.username}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -49,38 +53,48 @@ export default function RegisterForm({
               className={
                 errors.username && touched.username ? "input-error" : ""
               }
+              aria-describedby="username-error"
+              aria-invalid={!!(errors.username && touched.username)}
             />
             <span className="material-symbols-outlined username-icon">
               person
             </span>
           </div>
           {errors.username && touched.username && (
-            <p className="error">{errors.username}</p>
+            <p className="error" role="alert">
+              {errors.username}
+            </p>
           )}
 
           <label htmlFor="email">Email</label>
           <div className="email-input-container">
             <input
-              type="email"
               id="email"
+              name="email"
+              type="email"
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="Enter your email"
               autoComplete="off"
               className={errors.email && touched.email ? "input-error" : ""}
+              aria-describedby="email-error"
+              aria-invalid={!!(errors.email && touched.email)}
             />
             <span className="material-symbols-outlined email-icon">mail</span>
           </div>
           {errors.email && touched.email && (
-            <p className="error">{errors.email}</p>
+            <p className="error" role="alert">
+              {errors.email}
+            </p>
           )}
 
           <label htmlFor="password">Password</label>
           <div className="password-input-container">
             <input
-              type={showPassword ? "text" : "password"}
               id="password"
+              name="password"
+              type={showPassword ? "text" : "password"}
               value={values.password}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -89,23 +103,29 @@ export default function RegisterForm({
               className={
                 errors.password && touched.password ? "input-error" : ""
               }
+              aria-describedby="password-error"
+              aria-invalid={!!(errors.password && touched.password)}
             />
             <span
               className="material-symbols-outlined password-toggle-icon"
-              onClick={togglePassword}
+              onClick={passwordVisibility}
+              aria-label={showPassword ? "Hide password" : "Show password"}
             >
               {showPassword ? "visibility_off" : "visibility"}
             </span>
           </div>
           {errors.password && touched.password && (
-            <p className="error">{errors.password}</p>
+            <p className="error" role="alert">
+              {errors.password}
+            </p>
           )}
 
           <label htmlFor="confirmPassword">Confirm Password</label>
           <div className="password-input-container">
             <input
-              type={showPassword ? "text" : "password"}
               id="confirmPassword"
+              name="confirmPassword"
+              type={showPassword ? "text" : "password"}
               value={values.confirmPassword}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -116,16 +136,23 @@ export default function RegisterForm({
                   ? "input-error"
                   : ""
               }
+              aria-describedby="confirmPassword-error"
+              aria-invalid={
+                !!(errors.confirmPassword && touched.confirmPassword)
+              }
             />
             <span
               className="material-symbols-outlined password-toggle-icon"
-              onClick={togglePassword}
+              onClick={passwordVisibility}
+              aria-label={showPassword ? "Hide password" : "Show password"}
             >
               {showPassword ? "visibility_off" : "visibility"}
             </span>
           </div>
           {errors.confirmPassword && touched.confirmPassword && (
-            <p className="error">{errors.confirmPassword}</p>
+            <p className="error" role="alert">
+              {errors.confirmPassword}
+            </p>
           )}
 
           <button type="submit">Register</button>

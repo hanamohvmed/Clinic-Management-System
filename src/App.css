@@ -169,7 +169,7 @@ ul {
   color: var(--main-blue);
 }
 
-.login-text {
+.header-text {
   text-align: center;
   font-size: 32px;
   font-weight: 600;
@@ -256,16 +256,12 @@ ul {
   position: absolute;
   right: 12px;
   top: 15%;
-  cursor: pointer;
   user-select: none;
   background-color: #f5faff;
   padding: 3px;
   font-size: 22px;
   color: var(--main-blue);
 }
-
-@media (max-width: 567px) {
-  .form select {
-    min-width: 90%;
-  }
+.password-toggle-icon {
+  cursor: pointer;
 }

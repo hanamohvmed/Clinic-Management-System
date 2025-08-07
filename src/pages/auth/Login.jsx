@@ -18,56 +18,69 @@ export function Login() {
     useFormik({
       initialValues: {
         email: "",
-        password: "",
+        password: ""
       },
       validationSchema: loginSchema,
-      onSubmit,
+      onSubmit
     });
   return (
     <div className="login-page">
       <div className="log-card">
-        <h3 className="login-text">Login</h3>
+        <h3 className="header-text">Login</h3>
+
         <form className="form" onSubmit={handleSubmit}>
           <label htmlFor="email">Email</label>
           <div className="email-input-container">
             <input
-              type="email"
-              autoComplete="off"
               id="email"
+              name="email"
+              type="email"
               value={values.email}
               onChange={handleChange}
-              placeholder="Enter your email"
               onBlur={handleBlur}
+              placeholder="Enter your email"
+              autoComplete="off"
               className={errors.email && touched.email ? "input-error" : ""}
+              aria-describedby="email-error"
+              aria-invalid={!!(errors.email && touched.email)}
             />
             <span className="material-symbols-outlined email-icon">mail</span>
           </div>
           {errors.email && touched.email && (
-            <p className="error">{errors.email}</p>
+            <p className="error" role="alert">
+              {errors.email}
+            </p>
           )}
+
           <label htmlFor="password">Password</label>
           <div className="password-input-container">
             <input
-              type={showPassword ? "text" : "password"}
-              autoComplete="off"
               id="password"
+              name="password"
+              type={showPassword ? "text" : "password"}
               value={values.password}
               onChange={handleChange}
-              placeholder="Enter your password"
               onBlur={handleBlur}
+              placeholder="Enter your password"
+              autoComplete="off"
               className={
                 errors.password && touched.password ? "input-error" : ""
               }
+              aria-describedby="password-error"
+              aria-invalid={!!(errors.password && touched.password)}
             />
             <span
               className="material-symbols-outlined password-toggle-icon"
               onClick={passwordVisibility}
+              aria-label={showPassword ? "Hide password" : "Show password"}
             >
               {showPassword ? "visibility_off" : "visibility"}
             </span>
           </div>
           {errors.password && touched.password && (
-            <p className="error">{errors.password}</p>
+            <p className="error" role="alert">
+              {errors.password}
+            </p>
           )}
           <button type="submit">Login</button>
 
