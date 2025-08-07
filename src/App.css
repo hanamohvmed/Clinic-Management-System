@@ -184,8 +184,9 @@ ul {
   gap: 4px;
 }
 
-.form input,.form select {
-  min-width: 100%;
+.form input,
+.form select {
+  width: 100%;
   padding: 12px;
   border-radius: 8px;
   background-color: #f5faff;
@@ -245,12 +246,12 @@ ul {
   font-weight: 500;
   text-decoration: none;
 }
-.username-input-container,
+.fullName-input-container,
 .email-input-container,
 .password-input-container {
   position: relative;
 }
-.username-icon,
+.fullName-icon,
 .email-icon,
 .password-toggle-icon {
   position: absolute;
@@ -264,4 +265,14 @@ ul {
 }
 .password-toggle-icon {
   cursor: pointer;
+}
+@media (max-width: 567px) {
+  .form select {
+    width: 90%;
+  }
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(38%) sepia(90%) saturate(550%) hue-rotate(180deg);
+  cursor: pointer;
+  font-size: 20px;
 }

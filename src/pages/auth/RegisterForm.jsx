@@ -4,7 +4,6 @@ import { registerSchema } from "../../schemas";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../store/AuthContext";
 
-
 export default function RegisterForm() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -15,8 +14,8 @@ export default function RegisterForm() {
   };
 
   const onSubmit = async (values, actions) => {
-  try {
-    await register(
+    try {
+      await register(
         values.fullName,
         values.email,
         values.password,
@@ -31,10 +30,9 @@ export default function RegisterForm() {
     }
   };
 
-
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
-        initialValues: {
+      initialValues: {
         fullName: "",
         email: "",
         password: "",
@@ -50,7 +48,6 @@ export default function RegisterForm() {
     <div className="register-page">
       <div className="reg-card">
         <h3 className="header-text">Patient Register</h3>
-        
 
         <form className="form" onSubmit={handleSubmit}>
           <label htmlFor="fullName">Full Name</label>
@@ -64,14 +61,20 @@ export default function RegisterForm() {
               onBlur={handleBlur}
               placeholder="Enter your full name"
               autoComplete="off"
-              className={errors.fullName && touched.fullName ? "input-error" : ""}
+              className={
+                errors.fullName && touched.fullName ? "input-error" : ""
+              }
               aria-describedby="fullName-error"
               aria-invalid={!!(errors.fullName && touched.fullName)}
             />
-            <span className="material-symbols-outlined username-icon">person</span>
+            <span className="material-symbols-outlined fullName-icon">
+              person
+            </span>
           </div>
           {errors.fullName && touched.fullName && (
-            <p className="error" role="alert">{errors.fullName}</p>
+            <p className="error" role="alert">
+              {errors.fullName}
+            </p>
           )}
 
           <label htmlFor="email">Email</label>
@@ -105,11 +108,16 @@ export default function RegisterForm() {
             value={values.birthDate}
             onChange={handleChange}
             onBlur={handleBlur}
-            className={errors.birthDate && touched.birthDate ? "input-error" : ""}
+            className={
+              errors.birthDate && touched.birthDate ? "input-error" : ""
+            }
           />
           {errors.birthDate && touched.birthDate && (
-            <p className="error" role="alert">{errors.birthDate}</p>
+            <p className="error" role="alert">
+              {errors.birthDate}
+            </p>
           )}
+
           <label htmlFor="gender">Gender</label>
           <select
             id="gender"
@@ -119,13 +127,17 @@ export default function RegisterForm() {
             onBlur={handleBlur}
             className={errors.gender && touched.gender ? "input-error" : ""}
           >
-            <option value="" disabled>Select your gender</option>
+            <option value="" disabled>
+              Select your gender
+            </option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Other">Other</option>
           </select>
           {errors.gender && touched.gender && (
-            <p className="error" role="alert">{errors.gender}</p>
+            <p className="error" role="alert">
+              {errors.gender}
+            </p>
           )}
 
           <label htmlFor="password">Password</label>

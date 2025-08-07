@@ -14,8 +14,8 @@ export const loginSchema = yup.object().shape({
 
 export const registerSchema = yup.object().shape({
   fullName: yup.string().required("Required"),
-  birthDate: yup.date().required("Birth date is required"),
-  gender: yup.string().required("Gender is required"),
+  birthDate: yup.date().required("Required"),
+  gender: yup.string().required("Required"),
   email: yup.string().email("Invalid email address").required("Required"),
   password: yup
     .string()
