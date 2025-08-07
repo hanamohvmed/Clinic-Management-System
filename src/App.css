@@ -184,7 +184,7 @@ ul {
   gap: 4px;
 }
 
-.form input {
+.form input,.form select {
   min-width: 100%;
   padding: 12px;
   border-radius: 8px;

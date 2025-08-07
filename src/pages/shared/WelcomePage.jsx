@@ -16,7 +16,7 @@ export function WelcomePage() {
           <Link className="button" to="/login">
             Login
           </Link>
-          <Link className="button" to="/registerDoctor">
+          <Link className="button" to="/register">
             Register
           </Link>
         </div>

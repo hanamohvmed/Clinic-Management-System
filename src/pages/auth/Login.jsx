@@ -1,17 +1,41 @@
 import { useFormik } from "formik";
 import { useState } from "react";
 import { loginSchema } from "../../schemas/index";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
-const onSubmit = () => {
-  console.log("Submited");
-};
+
+
 
 export function Login() {
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate()
   const passwordVisibility = () => {
     setShowPassword((pass) => !pass);
+  };
+
+  const onSubmit = async (values, actions) => {
+    try {
+      const response = await fetch("https://localhost:7074/api/Auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Invalid email or password");
+      }
+
+      const data = await response.json();
+
+      localStorage.setItem("token", data.token);
+      navigate("/home");
+
+      actions.resetForm();
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
   };
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
@@ -86,7 +110,7 @@ export function Login() {
 
           <p className="sign-text">
             Don't have an account?{" "}
-            <Link className="sign-link" to="/registerDoctor">
+            <Link className="sign-link" to="/register">
               Register
             </Link>
           </p>

@@ -1,7 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import { Login } from "./pages/auth/Login";
-import RegisterDoctor from "./pages/auth/RegisterDoctor";
-import RegisterPatient from "./pages/auth/RegisterPatient";
 import { WelcomePage } from "./pages/shared/WelcomePage";
 import MyBookings from "./pages/patient/MyBookings";
 
@@ -11,13 +9,12 @@ import Home from "./pages/patient/Home";
 import BrowseDoctors from "./pages/patient/BrowseDoctors";
 import Booking from "./pages/patient/booking";
 import DoctorDashboard from "./pages/doctor/DoctorDashboard";
-import PatientBookings from "./pages/doctor/PatientBookings";
+import RegisterForm from "./pages/auth/RegisterForm";
 
 const routes = [
   { path: "/", element: <WelcomePage /> },
   { path: "/login", element: <Login /> },
-  { path: "/registerDoctor", element: <RegisterDoctor /> },
-  { path: "/RegisterPatient", element: <RegisterPatient /> },
+  { path: "/register", element: <RegisterForm /> },
   { path: "/doctor-dashboard", element: <DoctorDashboard /> },
   {
     path: "/home",
