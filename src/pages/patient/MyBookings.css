@@ -529,10 +529,14 @@
 
   .tab {
     text-align: center;
+    width: 10rem;
   }
 }
 
 @media (max-width: 480px) {
+  .tab {
+    width: 10rem;
+  }
   .booking-card {
     padding: 25px;
   }
