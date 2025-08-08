@@ -232,11 +232,11 @@ tr.not-available {
   background-color: #0c5862;
 }
 
-
-.fully-booked {
+.no-bookings {
   background-color: #fff3cd;
   border-left: 5px solid #ffc107;
 }
+
 
 
 @media (max-width: 768px) {
