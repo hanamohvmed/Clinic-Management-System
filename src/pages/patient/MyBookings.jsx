@@ -392,8 +392,10 @@ import React, { useState, useEffect, useContext } from "react";
 import "./MyBookings.css";
 import AuthContext from "../../store/AuthContext";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const MyBookings = () => {
+  const navigate = useNavigate();
   const { token } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
   const [filter, setFilter] = useState("upcoming");
@@ -649,9 +651,12 @@ const MyBookings = () => {
             {filter === "upcoming" ? (
               <>
                 <h3>You have no upcoming bookings.</h3>
-                <Link to="/home/book-appointment">
-                  <button className="cta-button">Book an Appointment</button>
-                </Link>
+                <button
+                  className="cta-button"
+                  onClick={() => navigate("/home/doctors-list")}
+                >
+                  Browse Doctors
+                </button>
               </>
             ) : (
               <>
