@@ -55,13 +55,13 @@
 // }) {
 //   return (
 //     <div className="flex flex-col bg-white p-4 border border-gray-200 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 w-full mx-auto">
-      
+
 //       {/* Name */}
 //       <h1 className="text-2xl font-semibold p-1 text-gray-800">{name}</h1>
 
 //       {/* Content - Responsive layout */}
 //       <div className="flex flex-col md:flex-row gap-4 items-center md:items-start">
-        
+
 //         {/* Doctor Image */}
 //         <img
 //           className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-2 border-sky-300"
@@ -71,7 +71,7 @@
 
 //         {/* Details */}
 //         <div className="details text-center md:text-left">
-          
+
 //           {/* Stars */}
 //           <div className="flex justify-center md:justify-start gap-1 mb-1">
 //             {[...Array(4)].map((_, i) => (
@@ -117,7 +117,6 @@ function DoctorCard({
 }) {
   return (
     <div className="flex flex-col bg-white p-4 border border-gray-200 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 w-full mx-auto">
-      
       {/* Name */}
       <h1 className="text-xl md:text-2xl font-semibold p-1 text-gray-800 text-center md:text-left">
         {name}
@@ -125,17 +124,15 @@ function DoctorCard({
 
       {/* Content - Responsive layout */}
       <div className="flex flex-col md:flex-row gap-4 items-center md:items-start">
-        
         {/* Doctor Image */}
         <img
-          className="w-28 h-28 md:w-40 md:h-40 object-cover rounded-full border-2 border-sky-300"
+          className="w-32 h-32 aspect-square object-cover rounded-full border-2 border-sky-300 flex-shrink-0"
           src={image}
           alt={name}
         />
 
         {/* Details */}
         <div className="details w-full text-center md:text-left mt-2 md:mt-0">
-          
           {/* Stars */}
           <div className="flex justify-center md:justify-start gap-1 mb-2">
             {[...Array(4)].map((_, i) => (
@@ -170,5 +167,3 @@ function DoctorCard({
 }
 
 export default DoctorCard;
-
-
