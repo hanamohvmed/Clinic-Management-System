@@ -1,0 +1,513 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\D\\CSharp Projects\\Clinic\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\controllers\\doctorslotscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\controllers\\doctorslotscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\controllers\\doctorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\controllers\\doctorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807215918_updatePatientId.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Clinic\\Migrations\\20250807215918_updatePatientId.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\entities\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\entities\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\entities\\doctorslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\entities\\doctorslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\dtos\\registerdoctordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\dtos\\registerdoctordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\dtos\\specializationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\dtos\\specializationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\dtos\\registerpatientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\dtos\\registerpatientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\dtos\\doctorslotdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\dtos\\doctorslotdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\dtos\\bookappointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\dtos\\bookappointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\dtos\\doctorsearchresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\dtos\\doctorsearchresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\entities\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\entities\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\controllers\\specializationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\controllers\\specializationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807164028_UpdateDoctorSlotColumns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Clinic\\Migrations\\20250807164028_UpdateDoctorSlotColumns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ClinicITIProjectDb/True/SqlTable/dbo.TimeSlots.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807163619_UpdateDoctorSlotColumns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Clinic\\Migrations\\20250807163619_UpdateDoctorSlotColumns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ClinicITIProjectDb/True/SqlTable/dbo.Doctors.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ClinicITIProjectDb/True/SqlTable/dbo.AspNetUsers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\entities\\specialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\entities\\specialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\dtos\\doctorsearchquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\dtos\\doctorsearchquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\hosting.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\hosting.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\migrations\\20250807170023_addisactivedoctorslotcolumns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\migrations\\20250807170023_addisactivedoctorslotcolumns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|e:\\d\\csharp projects\\clinic\\clinic\\migrations\\20250807155048_addbiocolumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D770BCC-354A-42F3-B04D-5C31D29D1B0D}|Clinic\\Clinic.csproj|solutionrelative:clinic\\migrations\\20250807155048_addbiocolumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20250807215918_updatePatientId.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807215918_updatePatientId.cs",
+              "RelativeDocumentMoniker": "Clinic\\Migrations\\20250807215918_updatePatientId.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807215918_updatePatientId.cs",
+              "RelativeToolTip": "Clinic\\Migrations\\20250807215918_updatePatientId.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T21:59:19.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DoctorSlotsController.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Controllers\\DoctorSlotsController.cs",
+              "RelativeDocumentMoniker": "Clinic\\Controllers\\DoctorSlotsController.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Controllers\\DoctorSlotsController.cs",
+              "RelativeToolTip": "Clinic\\Controllers\\DoctorSlotsController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowCUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T16:24:36.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppointmentsController.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Controllers\\AppointmentsController.cs",
+              "RelativeDocumentMoniker": "Clinic\\Controllers\\AppointmentsController.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Controllers\\AppointmentsController.cs",
+              "RelativeToolTip": "Clinic\\Controllers\\AppointmentsController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAMwBwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T12:05:23.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DoctorSlot.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Entities\\DoctorSlot.cs",
+              "RelativeDocumentMoniker": "Clinic\\Entities\\DoctorSlot.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Entities\\DoctorSlot.cs",
+              "RelativeToolTip": "Clinic\\Entities\\DoctorSlot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T16:06:34.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegisterDoctorDto.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\RegisterDoctorDto.cs",
+              "RelativeDocumentMoniker": "Clinic\\DTOs\\RegisterDoctorDto.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\RegisterDoctorDto.cs",
+              "RelativeToolTip": "Clinic\\DTOs\\RegisterDoctorDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T19:02:26.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Entities\\Appointment.cs",
+              "RelativeDocumentMoniker": "Clinic\\Entities\\Appointment.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Entities\\Appointment.cs",
+              "RelativeToolTip": "Clinic\\Entities\\Appointment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T16:07:48.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Entities\\Patient.cs",
+              "RelativeDocumentMoniker": "Clinic\\Entities\\Patient.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Entities\\Patient.cs",
+              "RelativeToolTip": "Clinic\\Entities\\Patient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T16:11:54.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Entities\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Clinic\\Entities\\ApplicationUser.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Entities\\ApplicationUser.cs",
+              "RelativeToolTip": "Clinic\\Entities\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T15:49:32.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DoctorsController.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Controllers\\DoctorsController.cs",
+              "RelativeDocumentMoniker": "Clinic\\Controllers\\DoctorsController.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Controllers\\DoctorsController.cs",
+              "RelativeToolTip": "Clinic\\Controllers\\DoctorsController.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAIAwwI0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T11:55:54.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SpecializationDto.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\SpecializationDto.cs",
+              "RelativeDocumentMoniker": "Clinic\\DTOs\\SpecializationDto.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\SpecializationDto.cs",
+              "RelativeToolTip": "Clinic\\DTOs\\SpecializationDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T15:51:57.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Program.cs",
+              "RelativeDocumentMoniker": "Clinic\\Program.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Program.cs",
+              "RelativeToolTip": "Clinic\\Program.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAgwEQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T12:05:50.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RegisterPatientDto.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\RegisterPatientDto.cs",
+              "RelativeDocumentMoniker": "Clinic\\DTOs\\RegisterPatientDto.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\RegisterPatientDto.cs",
+              "RelativeToolTip": "Clinic\\DTOs\\RegisterPatientDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T21:16:20.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BookAppointmentDto.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\BookAppointmentDto.cs",
+              "RelativeDocumentMoniker": "Clinic\\DTOs\\BookAppointmentDto.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\BookAppointmentDto.cs",
+              "RelativeToolTip": "Clinic\\DTOs\\BookAppointmentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T19:47:16.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DoctorSearchResultDto.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\DoctorSearchResultDto.cs",
+              "RelativeDocumentMoniker": "Clinic\\DTOs\\DoctorSearchResultDto.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\DoctorSearchResultDto.cs",
+              "RelativeToolTip": "Clinic\\DTOs\\DoctorSearchResultDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T11:57:38.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DoctorSlotDto.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\DoctorSlotDto.cs",
+              "RelativeDocumentMoniker": "Clinic\\DTOs\\DoctorSlotDto.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\DoctorSlotDto.cs",
+              "RelativeToolTip": "Clinic\\DTOs\\DoctorSlotDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T12:22:50.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Doctor.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Entities\\Doctor.cs",
+              "RelativeDocumentMoniker": "Clinic\\Entities\\Doctor.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Entities\\Doctor.cs",
+              "RelativeToolTip": "Clinic\\Entities\\Doctor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T15:48:46.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Clinic\\Controllers\\AuthController.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Clinic\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowDQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T12:27:51.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SpecializationsController.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Controllers\\SpecializationsController.cs",
+              "RelativeDocumentMoniker": "Clinic\\Controllers\\SpecializationsController.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Controllers\\SpecializationsController.cs",
+              "RelativeToolTip": "Clinic\\Controllers\\SpecializationsController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAA9wDYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T15:45:43.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\appsettings.json",
+              "RelativeDocumentMoniker": "Clinic\\appsettings.json",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\appsettings.json",
+              "RelativeToolTip": "Clinic\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-07T18:49:03.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "20250807170023_AddIsActiveDoctorSlotColumns.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807170023_AddIsActiveDoctorSlotColumns.cs",
+              "RelativeDocumentMoniker": "Clinic\\Migrations\\20250807170023_AddIsActiveDoctorSlotColumns.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807170023_AddIsActiveDoctorSlotColumns.cs",
+              "RelativeToolTip": "Clinic\\Migrations\\20250807170023_AddIsActiveDoctorSlotColumns.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T17:00:23.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20250807164028_UpdateDoctorSlotColumns.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807164028_UpdateDoctorSlotColumns.cs",
+              "RelativeDocumentMoniker": "Clinic\\Migrations\\20250807164028_UpdateDoctorSlotColumns.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807164028_UpdateDoctorSlotColumns.cs",
+              "RelativeToolTip": "Clinic\\Migrations\\20250807164028_UpdateDoctorSlotColumns.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T16:40:29.027Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "dbo.TimeSlots.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ClinicITIProjectDb/True/SqlTable/dbo.TimeSlots.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ClinicITIProjectDb/True/SqlTable/dbo.TimeSlots.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-08-07T16:36:57.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20250807163619_UpdateDoctorSlotColumns.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807163619_UpdateDoctorSlotColumns.cs",
+              "RelativeDocumentMoniker": "Clinic\\Migrations\\20250807163619_UpdateDoctorSlotColumns.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807163619_UpdateDoctorSlotColumns.cs",
+              "RelativeToolTip": "Clinic\\Migrations\\20250807163619_UpdateDoctorSlotColumns.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T16:36:19.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "20250807155048_AddBioColumn.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807155048_AddBioColumn.cs",
+              "RelativeDocumentMoniker": "Clinic\\Migrations\\20250807155048_AddBioColumn.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Migrations\\20250807155048_AddBioColumn.cs",
+              "RelativeToolTip": "Clinic\\Migrations\\20250807155048_AddBioColumn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T15:50:49.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Specialization.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Entities\\Specialization.cs",
+              "RelativeDocumentMoniker": "Clinic\\Entities\\Specialization.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Entities\\Specialization.cs",
+              "RelativeToolTip": "Clinic\\Entities\\Specialization.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T15:52:01.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "dbo.Doctors.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ClinicITIProjectDb/True/SqlTable/dbo.Doctors.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ClinicITIProjectDb/True/SqlTable/dbo.Doctors.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-08-07T15:56:36.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "dbo.AspNetUsers.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ClinicITIProjectDb/True/SqlTable/dbo.AspNetUsers.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ClinicITIProjectDb/True/SqlTable/dbo.AspNetUsers.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-08-07T15:56:58.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "hosting.txt",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\hosting.txt",
+              "RelativeDocumentMoniker": "Clinic\\hosting.txt",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\hosting.txt",
+              "RelativeToolTip": "Clinic\\hosting.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-08-05T12:06:24.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "DoctorSearchQuery.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\DoctorSearchQuery.cs",
+              "RelativeDocumentMoniker": "Clinic\\DTOs\\DoctorSearchQuery.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\DTOs\\DoctorSearchQuery.cs",
+              "RelativeToolTip": "Clinic\\DTOs\\DoctorSearchQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T12:25:46.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Clinic\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "E:\\D\\CSharp Projects\\Clinic\\Clinic\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Clinic\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T12:28:16.137Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
