@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { CiStethoscope } from "react-icons/ci";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GrLogout } from "react-icons/gr";
+import AuthContext from "../store/AuthContext";
 
 function NavBar() {
   const [showMenu, setshowMenu] = useState(false);
+  const { logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <>
       <div className="flex h-20 m-0 items-center px-6 justify-between py-5  border-b-gray-200 border-b-1 shadow-blue-200 bg-white shadow-sm fixed z-100 w-full ">
@@ -40,9 +49,9 @@ function NavBar() {
             </button>
           </Link>
 
-          <Link to="/WelcomePage" className="flex items-center">
+          <button onClick={handleLogout} className="flex items-center">
             <GrLogout className="text-3xl text-sky-500 cursor-pointer" />
-          </Link>
+          </button>
         </div>
 
         <div className=" text-3xl md:hidden cursor-pointer ">

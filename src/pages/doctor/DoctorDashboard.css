@@ -232,11 +232,11 @@ tr.not-available {
   background-color: #0c5862;
 }
 
-
-.fully-booked {
+.no-bookings {
   background-color: #fff3cd;
   border-left: 5px solid #ffc107;
 }
+
 
 
 @media (max-width: 768px) {
@@ -249,6 +249,10 @@ tr.not-available {
     text-align: center;
     box-shadow: none;
     padding: 10px;
+  }
+  .sidebar img {
+    margin: auto;
+    display: block;
   }
 
   .main-content {
@@ -294,4 +298,8 @@ tr.not-available {
   .nav-links button {
     flex: 1 1 40%;
   }
+}
+
+.logout-btn{
+  
 }

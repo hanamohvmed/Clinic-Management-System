@@ -10,15 +10,29 @@ import BrowseDoctors from "./pages/patient/BrowseDoctors";
 import Booking from "./pages/patient/booking";
 import DoctorDashboard from "./pages/doctor/DoctorDashboard";
 import RegisterForm from "./pages/auth/RegisterForm";
+import ProtectedRoute from "./Components/ProtectedRoute";
+import UnAuthorized from "./Components/UnAuthorized";
 
 const routes = [
   { path: "/", element: <WelcomePage /> },
   { path: "/login", element: <Login /> },
   { path: "/register", element: <RegisterForm /> },
-  { path: "/doctor-dashboard", element: <DoctorDashboard /> },
+  { path: "/unauthorized", element: <UnAuthorized /> },
+  {
+    path: "/doctor-dashboard",
+    element: (
+      <ProtectedRoute allowedRoles={["doctor"]}>
+        <DoctorDashboard />
+      </ProtectedRoute>
+    ),
+  },
   {
     path: "/home",
-    element: <UserLayout />,
+    element: (
+      <ProtectedRoute allowedRoles={["patient"]}>
+        <UserLayout />
+      </ProtectedRoute>
+    ),
     children: [
       { path: "", element: <Home /> },
       { path: "doctors-list", element: <BrowseDoctors /> },

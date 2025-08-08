@@ -1,93 +1,126 @@
-import React, { useEffect, useState } from "react";
 import DoctorCard from "../../Components/DoctorCard";
-import { IoIosSearch } from "react-icons/io";
 
-// --------------------States----------------------
+import { useEffect, useState } from "react";
+import Filter from "../../Components/Filter";
+import Search from "../../Components/Search.Jsx";
+import { useNavigate } from "react-router-dom";
+
 function BrowseDoctors() {
-  const [users, setusers] = useState([]);
-  const [filtedUsers, setfiltedUsers] = useState([]);
-  //---------------------Api -----------------------
-  async function fetchUsers() {
-    try {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/users"
-      );
-      if (response.ok) {
-        const data = await response.json();
-        setusers(data);
-      }
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
+  const [specializations, setSpecializations] = useState([]);
+  const [selectedOption, setselectedOption] = useState("");
+  const [searchTerm, setsearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [doctors, setdoctors] = useState([]);
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+
   useEffect(() => {
-    fetchUsers();
+    async function fetchSpecializations() {
+      try {
+        const response = await fetch(
+          "http://clinic-dev.runasp.net/api/Specializations",
+          {
+            method: "GET",
+            headers: {
+              accept: "*/*",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Something went wrong: " + response.status);
+        }
+
+        const data = await response.json();
+        setSpecializations(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchSpecializations();
   }, []);
 
-  //--------Filter && Search ---------------------
-  function getName(name) {
-    setfiltedUsers(users.filter((user) => user.name === name));
-  }
-  function SearchByDoctor(name) {
-    setfiltedUsers(
-      users.filter((user) =>
-        user.name.toLowerCase().includes(name.toLowerCase())
-      )
-    );
+  useEffect(() => {
+    async function fetchDoctors() {
+      try {
+        const response = await fetch(
+          "http://clinic-dev.runasp.net/api/Doctors/search",
+          {
+            method: "GET",
+            headers: {
+              accept: "*/*",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Failed To fetch");
+        }
+        const data = await response.json();
+        const doctorsdata = data.doctors;
+        // console.log(doctorsdata);
+        setdoctors(doctorsdata);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchDoctors();
+  }, []);
+
+  function makeappointment(id) {
+    navigate(`/home/book-appointment?doctorId=${id}`)
+    console.log(id);
   }
 
+  const filteredDoctors = doctors.filter(
+    (doctor) =>
+      doctor.fullName.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      (selectedOption === "" || doctor.specialization === selectedOption)
+  );
   return (
     <>
-      <div className=" p-6 flex flex-col w-full md:flex-row  min-h-screen gap-2.5 bg-sky-50">
-        {/* ---------------------------- Left Section --------------------------------------- */}
-        <div className="bg-white w-full  rounded-2xl p-8 md:w-1/4 border border-gray-200 ">
-          <div className="flex items-center  justify-center gap-3">
-            <h1 className="font-normal text-xl">Filter specialty </h1>
-            <button
-              className="cursor-pointer bg-gray-200 rounded-xl p-1  "
-              onClick={() => setfiltedUsers(users)}
-            >
-              Reset
-            </button>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-2  md:grid-cols-1  gap-2 mt-4 ">
-            {users.map((item) => {
-              return (
-                <button
-                  key={item.id}
-                  className="bg-sky-300 cursor-pointer rounded-2xl px-4 "
-                  onClick={() => getName(item.name)}
-                >
-                  {item.name}
-                </button>
-              );
-            })}
-          </div>
+      {loading && <p className="text-black">Loading...</p>}
+      {error && <p>Error : {error}</p>}
+      <div className="flex flex-col gap-6 m-2.5 p-3 lg:px-28 ">
+        {/* Seach&filtering */}
+        <div className="flex flex-col lg:flex-row gap-6 m-4" >
+          <Search
+            searchTerm={searchTerm}
+            onSearch={(e) => setsearchTerm(e.target.value)}
+          />
+          <Filter
+            selectedCategory={selectedOption}
+            categories={specializations}
+            onChangeCategory={(e) => setselectedOption(e.target.value)}
+          />
         </div>
-        {/* ---------------------------- Right Section --------------------------------------- */}
-        <div className=" flex flex-col gap-8 px-5  bg-sky-50 w-full md:w-3/4">
-          <h1 className=" text-2xl md:text-4xl mt-5 text-center ">
-            Find the best doctors and healthcare providers for your needs
-          </h1>
-          <div className="flex flex-col gap-8  ">
-            {/*----------- Search--------------------- */}
-            <div className=" flex items-center px-2.5 py-3.5 rounded-4xl bg-gray-50 text-sky-600 shadow-sky-500 shadow-sm  ">
-              <IoIosSearch className="text-3xl mr-2.5" />
-              <input
-                className="w-full text-xl text-sky-600 border-none outline-none bg-transparent"
-                placeholder="Enter Doctor Name"
-                type="search"
-                onChange={(e) => SearchByDoctor(e.target.value)}
+        {/* ================ */}
+        <div className="flex flex-col  gap-3" >
+          {!loading && !error && filteredDoctors.length === 0 ? (
+            <>
+              <p>No Doctors Founded</p>
+            </>
+          ) : (
+            filteredDoctors.map((doc) => (
+              <DoctorCard
+                key={doc.id}
+                name={doc.fullName}
+                bio={doc.bio}
+                spec={doc.specialization}
+                image={doc.profilePictureUrl}
+                clinicAdderss={doc.clinicAddress}
+                makeappointment={() => makeappointment(doc.id)}
               />
-            </div>
-            {/*----------- ----------------------------- */}
-            <div className="flex flex-col gap-3 items-center">
-              {(filtedUsers.length > 0 ? filtedUsers : users).map((doctor) => {
-                return <DoctorCard name={doctor.name} email={doctor.email} />;
-              })}
-            </div>
-          </div>
+            ))
+          )}
         </div>
       </div>
     </>
