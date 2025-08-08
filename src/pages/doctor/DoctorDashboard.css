@@ -250,6 +250,10 @@ tr.not-available {
     box-shadow: none;
     padding: 10px;
   }
+  .sidebar img {
+    margin: auto;
+    display: block;
+  }
 
   .main-content {
     padding: 15px;

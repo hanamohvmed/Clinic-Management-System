@@ -1,119 +1,145 @@
-import React, { useState, useEffect } from "react";
-import "./DoctorDashboard.css";
-import PatientBookings from "./PatientBookings";
+import React, { useState, useEffect } from 'react';
+import './DoctorDashboard.css';
+import PatientBookings from './PatientBookings';
 
-const API_URL = "https://your-api.com/slots";
-const DOCTOR_API_URL = "https://your-api.com/doctor/profile"; // عدله حسب الباك
+const BASE_URL = 'http://clinic-dev.runasp.net/api';
+const token = localStorage.getItem('token');
 
 const DoctorDashboard = () => {
   const [slots, setSlots] = useState([]);
   const [doctorInfo, setDoctorInfo] = useState(null);
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [sessionTime, setSessionTime] = useState("");
-  const [maxPatients, setMaxPatients] = useState("");
+  const [date, setDate] = useState('');
+  const [startTime, setTime] = useState('');
+  const [sessionDuration, setSessionTime] = useState('');
+  const [maxPatients, setMaxPatients] = useState('');
   const [editingId, setEditingId] = useState(null);
-  const [activePage, setActivePage] = useState("slots");
+  const [activePage, setActivePage] = useState('slots');
 
   useEffect(() => {
     fetchDoctorInfo();
-    fetchSlots();
   }, []);
+
+  useEffect(() => {
+    if (doctorInfo?.id) fetchSlots(doctorInfo.id);
+  }, [doctorInfo]);
 
   const fetchDoctorInfo = async () => {
     try {
-      const res = await fetch(DOCTOR_API_URL, {
+      const res = await fetch(`${BASE_URL}/Doctors/profile`, {
         headers: {
-          Authorization: "Bearer your-token", // أو حطها من localStorage لو عندك
+          Authorization: `Bearer ${token}`,
         },
       });
       const data = await res.json();
       setDoctorInfo(data);
     } catch (err) {
-      console.error("Failed to fetch doctor info:", err);
+      console.error('Failed to fetch doctor info:', err);
     }
   };
 
-  const fetchSlots = async () => {
+  const fetchSlots = async (doctorId) => {
     try {
-      const res = await fetch(API_URL);
+      const res = await fetch(`${BASE_URL}/DoctorSlots/get-doctor-slots?doctorId=${doctorId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       const data = await res.json();
       setSlots(data);
     } catch (err) {
-      console.error("Failed to fetch slots:", err);
+      console.error('Failed to fetch slots:', err);
     }
   };
 
   const addOrEditSlot = async () => {
-    if (!date || !time) return;
+    if (!date || !startTime || !sessionDuration || !maxPatients) return;
+    if (!doctorInfo?.id) return;
 
     const slotData = {
       date,
-      time,
-      sessionTime: sessionTime || "—",
-      maxPatients: maxPatients || "—",
+      time: startTime,
+      sessionMinutes: parseInt(sessionDuration),
+      maxPatients: parseInt(maxPatients),
+      isActive: true,
+      doctorId: doctorInfo.id,
     };
 
     try {
       if (editingId !== null) {
-        await fetch(`${API_URL}/${editingId}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
+        await fetch(`${BASE_URL}/DoctorSlots/${editingId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
           body: JSON.stringify(slotData),
         });
       } else {
-        await fetch(API_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...slotData, available: true }),
+        await fetch(`${BASE_URL}/DoctorSlots/add-slot`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(slotData),
         });
       }
 
-      fetchSlots();
+      fetchSlots(doctorInfo.id);
       clearForm();
     } catch (err) {
-      console.error("Failed to save slot:", err);
+      console.error('Failed to save slot:', err);
     }
   };
 
   const clearForm = () => {
-    setDate("");
-    setTime("");
-    setSessionTime("");
-    setMaxPatients("");
+    setDate('');
+    setTime('');
+    setSessionTime('');
+    setMaxPatients('');
     setEditingId(null);
   };
 
-  const toggleAvailability = async (id) => {
-    const currentAvailability = slots.find((slot) => slot.id === id)?.available;
+  const toggleAvailability = async (id, currentStatus) => {
     try {
-      await fetch(`${API_URL}/${id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ available: !currentAvailability }),
+      await fetch(`${BASE_URL}/DoctorSlots/change-status`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          slotId: id,
+          available: !currentStatus,
+          doctorId: doctorInfo.id,
+        }),
       });
-      fetchSlots();
+      fetchSlots(doctorInfo.id);
     } catch (err) {
-      console.error("Failed to update availability:", err);
+      console.error('Failed to update availability:', err);
     }
   };
 
   const cancelSlot = async (id) => {
     try {
-      await fetch(`${API_URL}/${id}`, {
-        method: "DELETE",
+      await fetch(`${BASE_URL}/DoctorSlots/${id}?doctorId=${doctorInfo.id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
       });
-      fetchSlots();
+      fetchSlots(doctorInfo.id);
     } catch (err) {
-      console.error("Failed to delete slot:", err);
+      console.error('Failed to delete slot:', err);
     }
   };
 
   const editSlot = (slot) => {
     setDate(slot.date);
-    setTime(slot.time);
-    setSessionTime(slot.sessionTime || "");
-    setMaxPatients(slot.maxPatients);
+    setTime(slot.time || slot.startTime);
+    setSessionTime(slot.sessionMinutes?.toString() || slot.sessionDuration?.toString() || '');
+    setMaxPatients(slot.maxPatients.toString());
     setEditingId(slot.id);
   };
 
@@ -121,15 +147,11 @@ const DoctorDashboard = () => {
     <div className="dashboard-container">
       <div className="sidebar">
         <div className="profile">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png"
-            alt="Dr"
-            width="100"
-          />
+          <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" alt="Dr" width="100" />
           {doctorInfo ? (
             <>
-              <h2>Dr. {doctorInfo.name}</h2>
-              <p>{doctorInfo.specialization}</p>
+              <h2>Dr. {doctorInfo.fullName}</h2>
+              <p>{doctorInfo.clinicAddress}</p>
               <p>{doctorInfo.bio}</p>
             </>
           ) : (
@@ -141,14 +163,14 @@ const DoctorDashboard = () => {
 
         <div className="nav-links">
           <button
-            onClick={() => setActivePage("slots")}
-            className={activePage === "slots" ? "active" : ""}
+            onClick={() => setActivePage('slots')}
+            className={activePage === 'slots' ? 'active' : ''}
           >
             My Slots
           </button>
           <button
-            onClick={() => setActivePage("bookings")}
-            className={activePage === "bookings" ? "active" : ""}
+            onClick={() => setActivePage('bookings')}
+            className={activePage === 'bookings' ? 'active' : ''}
           >
             Patient Bookings
           </button>
@@ -156,25 +178,17 @@ const DoctorDashboard = () => {
       </div>
 
       <div className="main-content">
-        {activePage === "slots" ? (
+        {activePage === 'slots' ? (
           <>
             <div className="section">
-              <h2>{editingId ? "Edit Slot" : "Add Slot"}</h2>
+              <h2>{editingId ? 'Edit Slot' : 'Add Slot'}</h2>
               <div className="add-slot-form">
-                <input
-                  type="date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                />
-                <input
-                  type="time"
-                  value={time}
-                  onChange={(e) => setTime(e.target.value)}
-                />
+                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+                <input type="time" value={startTime} onChange={(e) => setTime(e.target.value)} />
                 <input
                   type="text"
-                  placeholder="Session Time (e.g., 30 mins)"
-                  value={sessionTime}
+                  placeholder="Session Time (minutes)"
+                  value={sessionDuration}
                   onChange={(e) => setSessionTime(e.target.value)}
                 />
                 <input
@@ -183,9 +197,7 @@ const DoctorDashboard = () => {
                   value={maxPatients}
                   onChange={(e) => setMaxPatients(e.target.value)}
                 />
-                <button onClick={addOrEditSlot}>
-                  {editingId ? "Update" : "Add Slot"}
-                </button>
+                <button onClick={addOrEditSlot}>{editingId ? 'Update' : 'Add Slot'}</button>
               </div>
             </div>
 
@@ -203,29 +215,19 @@ const DoctorDashboard = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {slots.map((slot) => (
-                    <tr
-                      key={slot.id}
-                      className={!slot.available ? "not-available" : ""}
-                    >
+                  {slots.map(slot => (
+                    <tr key={slot.id} className={!slot.isActive ? 'not-available' : ''}>
                       <td>{slot.date}</td>
-                      <td>{slot.time}</td>
-                      <td>{slot.sessionTime}</td>
+                      <td>{slot.time || slot.startTime}</td>
+                      <td>{slot.sessionMinutes || slot.sessionDuration}</td>
                       <td>{slot.maxPatients}</td>
-                      <td>{slot.available ? "Available" : "Unavailable"}</td>
+                      <td>{slot.isActive ? 'Available' : 'Unavailable'}</td>
                       <td className="availability-actions">
-                        <button onClick={() => toggleAvailability(slot.id)}>
-                          {slot.available
-                            ? "Mark Unavailable"
-                            : "Mark Available"}
+                        <button onClick={() => toggleAvailability(slot.id, slot.isActive)}>
+                          {slot.isActive ? 'Mark Unavailable' : 'Mark Available'}
                         </button>
                         <button onClick={() => editSlot(slot)}>Edit</button>
-                        <button
-                          className="cancel-btn"
-                          onClick={() => cancelSlot(slot.id)}
-                        >
-                          Delete
-                        </button>
+                        <button className="cancel-btn" onClick={() => cancelSlot(slot.id)}>Delete</button>
                       </td>
                     </tr>
                   ))}
