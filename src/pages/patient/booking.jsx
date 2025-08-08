@@ -155,26 +155,32 @@ function Booking() {
     e.preventDefault();
 
     const bookingData = {
-      slotId: selectedSlotId,
+      DoctorSlotId: selectedSlotId,
       phoneNumber,
       reason,
     };
 
-    fetch("http://clinic-dev.runasp.net/api/Appointments", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(bookingData),
-    })
+      fetch("http://clinic-dev.runasp.net/api/Appointments/book", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(bookingData),
+      })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to book appointment");
-        alert("Appointment booked successfully!");
+        return res.json();
+      }).then((data) => {
+        console.log(data)
+        alert(
+          `Appointment booked successfully!\nDate: ${new Date(data.bookingDate).toLocaleDateString()} — Time: ${data.bookingTime}`
+        );
+        console.log("Booking API Response:", data);
         setSelectedSlotId(null);
         setPhoneNumber("");
         setReason("");
-      })
+      })  
       .catch((err) => alert(err.message));
   };
 
@@ -183,44 +189,69 @@ function Booking() {
 
   return (
     <div className="booking-container">
-      <h2>Available Appointments</h2>
-      {slots.length === 0 ? (
-        <p>No slots available</p>
-      ) : (
-        <ul className="slot-list">
-          {slots.map((slot) => (
-            <li key={slot.id}>
-              {new Date(slot.date).toLocaleDateString()} -{" "}
-              {new Date(slot.date).toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-              })}
-              <button onClick={() => setSelectedSlotId(slot.id)}>Book</button>
-            </li>
-          ))}
-        </ul>
-      )}
+  <h2 className="booking-title">Available Appointments</h2>
 
-      {selectedSlotId && (
-        <form className="booking-form" onSubmit={handleBook}>
-          <h3>Book Appointment</h3>
-          <input
-            type="text"
-            placeholder="Phone Number"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            required
-          />
-          <textarea
-            placeholder="Reason for Visit"
-            value={reason}
-            onChange={(e) => setReason(e.target.value)}
-            required
-          ></textarea>
-          <button type="submit">Confirm Booking</button>
-        </form>
-      )}
-    </div>
+  {slots.length === 0 ? (
+    <p className="no-slots">No slots available</p>
+  ) : (
+    <ul className="slot-list">
+      {slots.map((slot) => (
+        <li key={slot.id} className="slot-item">
+          <div className="slot-info">
+            <span className="slot-date">
+              <span className="slot-date-time">
+                {new Date(slot.date).toLocaleDateString()} — {slot.startTime.slice(0, 5)}
+              </span>
+            </span>
+          </div>
+          <button
+            className="book-btn"
+            onClick={() => setSelectedSlotId(slot.id)}
+          >
+            Book
+          </button>
+        </li>
+      ))}
+    </ul>
+  )}
+
+  {selectedSlotId && (
+    <form className="booking-form" onSubmit={handleBook}>
+      <h3 className="form-title">Book Appointment</h3>
+
+      <label>Phone Number</label>
+      <input
+        type="text"
+        placeholder="Enter phone number"
+        value={phoneNumber}
+        onChange={(e) => setPhoneNumber(e.target.value)}
+        required
+      />
+
+      <label>Reason for Visit</label>
+      <textarea
+        placeholder="Describe your symptoms or reason for visit"
+        value={reason}
+        onChange={(e) => setReason(e.target.value)}
+        required
+      ></textarea>
+
+      <div className="form-actions">
+        <button type="submit" className="confirm-btn">
+          Confirm Booking
+        </button>
+        <button
+          type="button"
+          className="cancel-btn"
+          onClick={() => setSelectedSlotId(null)}
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  )}
+</div>
+
   );
 }
 
