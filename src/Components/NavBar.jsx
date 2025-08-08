@@ -54,8 +54,17 @@ function NavBar() {
           </button>
         </div>
 
-        <div className=" text-3xl md:hidden cursor-pointer ">
-          <RxHamburgerMenu onClick={() => setshowMenu(!showMenu)} />
+        <div className="text-3xl md:hidden cursor-pointer flex items-center">
+          {!showMenu ? (
+            <RxHamburgerMenu onClick={() => setshowMenu(true)} />
+          ) : (
+            <img
+              src="/assets/icon-close.svg"
+              alt="Close menu"
+              className="w-6 h-6"
+              onClick={() => setshowMenu(false)}
+            />
+          )}
         </div>
       </div>
 
