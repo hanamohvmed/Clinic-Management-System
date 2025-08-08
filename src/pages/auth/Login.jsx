@@ -1,15 +1,15 @@
 import { useFormik } from "formik";
-import { useState ,useContext} from "react";
+import { useState, useContext } from "react";
 import { loginSchema } from "../../schemas/index";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import AuthContext from "../../store/AuthContext";
-
+import { jwtDecode } from "jwt-decode";
 
 
 export function Login() {
   const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate()
-  const { login } = useContext(AuthContext); 
+  const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
   const passwordVisibility = () => {
     setShowPassword((pass) => !pass);
@@ -17,8 +17,21 @@ export function Login() {
 
   const onSubmit = async (values, actions) => {
     try {
-      await login(values.email, values.password);
-      navigate("/home");
+      const token = await login(values.email, values.password); // خلي login ترجّع الـ token
+      const decoded = jwtDecode(token);
+      const role =
+        decoded[
+          "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+        ]?.toLowerCase();
+
+      if (role === "doctor") {
+        navigate("/doctor-dashboard");
+      } else if (role === "patient") {
+        navigate("/home");
+      } else {
+        navigate("/unauthorized");
+      }
+
       actions.resetForm();
     } catch (error) {
       console.error("Login failed:", error);
@@ -29,10 +42,10 @@ export function Login() {
     useFormik({
       initialValues: {
         email: "",
-        password: ""
+        password: "",
       },
       validationSchema: loginSchema,
-      onSubmit
+      onSubmit,
     });
   return (
     <div className="login-page">
