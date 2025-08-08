@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './DoctorDashboard.css';
 import PatientBookings from './PatientBookings';
+import { useNavigate } from 'react-router-dom';
+import AuthContext from '../../store/AuthContext';
 
 const BASE_URL = 'http://clinic-dev.runasp.net/api';
 const token = localStorage.getItem('token');
@@ -15,10 +17,18 @@ const DoctorDashboard = () => {
   const [editingId, setEditingId] = useState(null);
   const [activePage, setActivePage] = useState('slots');
 
+  const { logout } = useContext(AuthContext);
+  const navigate = useNavigate();
   useEffect(() => {
     fetchDoctorInfo();
     fetchSlots();
   }, []);
+
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   const fetchDoctorInfo = async () => {
     try {
@@ -196,6 +206,9 @@ const DoctorDashboard = () => {
             className={activePage === 'bookings' ? 'active' : ''}
           >
             Patient Bookings
+          </button>
+          <button className='logout-btn' onClick={handleLogout}>
+            Logout
           </button>
         </div>
       </div>

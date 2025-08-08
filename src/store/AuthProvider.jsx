@@ -57,6 +57,7 @@ function AuthProvider({ children }) {
     setToken(null);
     localStorage.removeItem("user");
     localStorage.removeItem("token");
+
   };
 
   const contextValue = {

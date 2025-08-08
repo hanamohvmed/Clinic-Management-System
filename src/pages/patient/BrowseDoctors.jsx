@@ -1,10 +1,9 @@
 import DoctorCard from "../../Components/DoctorCard";
-import { IoIosSearch } from "react-icons/io";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Filter from "../../Components/Filter";
 import Search from "../../Components/Search.Jsx";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function BrowseDoctors() {
   const [specializations, setSpecializations] = useState([]);
