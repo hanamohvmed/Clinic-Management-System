@@ -61,8 +61,8 @@ function NavBar() {
 
       {/* ---------------- Mobile View -------------------- */}
       {showMenu && (
-        <div className=" md:hidden flex flex-col  p-4 justify-center bg-white w-full rounded-b-sm ">
-          <div className="mt-24 flex flex-col gap-2 justify-center items-center   ">
+        <div className="fixed top-20 left-0 w-full z-50 md:hidden bg-white shadow-lg flex flex-col p-4 rounded-b-sm">
+          <div className="flex flex-col gap-2 justify-center items-center">
             <Link to={""} className="hover:text-sky-500">
               Home
             </Link>
@@ -74,7 +74,7 @@ function NavBar() {
             </Link>
             <Link to={"book-appointment"}>
               <button className="bg-sky-500 text-white rounded-3xl px-4 py-2 hover:opacity-80">
-                Appointment
+                Book Appointment
               </button>
             </Link>
           </div>
