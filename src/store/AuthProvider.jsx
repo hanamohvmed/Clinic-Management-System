@@ -32,6 +32,8 @@ function AuthProvider({ children }) {
 
     setUser({ email: data.email });
     setToken(data.token);
+
+    return data.token;
   };
 
   const register = async (fullName, email, password,birthDate,gender) => {
@@ -55,6 +57,7 @@ function AuthProvider({ children }) {
     setToken(null);
     localStorage.removeItem("user");
     localStorage.removeItem("token");
+
   };
 
   const contextValue = {
