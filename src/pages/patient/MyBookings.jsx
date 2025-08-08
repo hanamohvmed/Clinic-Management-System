@@ -52,7 +52,9 @@ const MyBookings = () => {
             id: appointment.id, // Using appointment id as doctor id for now
             name: appointment.doctorName,
             specialty: "General Medicine", // Default specialty since not provided in API
-            avatarUrl: "https://via.placeholder.com/40", // Default avatar
+            avatarUrl: appointment.doctorProfileImage && appointment.doctorProfileImage !== "string"
+              ? appointment.doctorProfileImage
+              : "https://via.placeholder.com/40", // Fallback if missing or default
           },
           appointmentDateTime: `${appointment.slotDate}T${appointment.time}`,
           status: "confirmed",
