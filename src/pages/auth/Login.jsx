@@ -5,7 +5,6 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import AuthContext from "../../store/AuthContext";
 import { jwtDecode } from "jwt-decode";
 
-
 export function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -17,7 +16,7 @@ export function Login() {
 
   const onSubmit = async (values, actions) => {
     try {
-      const token = await login(values.email, values.password); // خلي login ترجّع الـ token
+      const token = await login(values.email, values.password);
       const decoded = jwtDecode(token);
       const role =
         decoded[
@@ -42,10 +41,10 @@ export function Login() {
     useFormik({
       initialValues: {
         email: "",
-        password: "",
+        password: ""
       },
       validationSchema: loginSchema,
-      onSubmit,
+      onSubmit
     });
   return (
     <div className="login-page">
