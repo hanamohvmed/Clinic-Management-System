@@ -43,7 +43,7 @@ function NavBar() {
           </ul>
         </div>
         <div className="flex gap-4">
-          <Link to={"book-appointment"}>
+          <Link to={"doctors-list"}>
             <button className="cursor-pointer hidden  md:block bg-sky-500 text-amber-50 rounded-3xl p-2 hover:opacity-80 duration-200">
               Book Appointment
             </button>
@@ -81,7 +81,7 @@ function NavBar() {
             <Link to={"my-bookings"} className="hover:text-sky-500">
               My Appointments
             </Link>
-            <Link to={"book-appointment"}>
+            <Link to={"doctors-list"}>
               <button className="bg-sky-500 text-white rounded-3xl px-4 py-2 hover:opacity-80">
                 Book Appointment
               </button>

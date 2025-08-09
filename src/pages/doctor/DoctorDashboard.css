@@ -5,7 +5,10 @@
   font-family: Arial, sans-serif;
   background-color: #f7f9fb;
 }
-
+.sidebar img {
+  margin: auto;
+  display: block;
+}
 
 .sidebar {
   width: 250px;
