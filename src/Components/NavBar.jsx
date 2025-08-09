@@ -44,7 +44,7 @@ function NavBar() {
         </div>
         <div className="flex gap-4">
           <Link to={"doctors-list"}>
-            <button className="cursor-pointer hidden  md:block bg-sky-500 text-amber-50 rounded-3xl p-2 hover:opacity-80 duration-200">
+            <button className="cursor-pointer hidden  md:block bg-sky-500 text-amber-50 rounded-3xl p-2 hover:bg-[#1477b8] duration-200">
               Book Appointment
             </button>
           </Link>
