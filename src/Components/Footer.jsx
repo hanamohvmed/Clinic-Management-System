@@ -16,7 +16,7 @@ function Footer() {
           <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
           <ul className="space-y-2">
             <li>
-              <Link to="/" className="hover:underline">
+              <Link to="/home" className="hover:underline">
                 Home
               </Link>
             </li>
