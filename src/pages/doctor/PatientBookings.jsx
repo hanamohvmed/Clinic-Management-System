@@ -134,7 +134,7 @@ const PatientBookings = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
 
-    fetch('http://clinic-dev.runasp.net/api/Doctors/Bookings', {
+    fetch('http://clinicdev.runasp.net/api/Doctors/Bookings', {
       headers: {
         Authorization: `Bearer ${token}`,
       },

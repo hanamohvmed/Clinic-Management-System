@@ -32,7 +32,7 @@ const MyBookings = () => {
         };
 
         const response = await fetch(
-          "http://clinic-dev.runasp.net/api/Appointments",
+          "http://clinicdev.runasp.net/api/Appointments",
           {
             method: "GET",
             headers,
@@ -135,7 +135,7 @@ const MyBookings = () => {
         Authorization: `Bearer ${token}`,
       };
 
-      fetch(`http://clinic-dev.runasp.net/api/Appointments/${bookingId}`, {
+      fetch(`http://clinicdev.runasp.net/api/Appointments/${bookingId}`, {
         method: "DELETE",
         headers,
       }).catch((error) => {

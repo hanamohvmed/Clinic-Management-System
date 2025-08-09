@@ -17,7 +17,7 @@ function Booking() {
 
   useEffect(() => {
     fetch(
-      `http://clinic-dev.runasp.net/api/DoctorSlots/get-doctor-slots?doctorId=${doctorId}`,
+      `http://clinicdev.runasp.net/api/DoctorSlots/get-doctor-slots?doctorId=${doctorId}`,
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -47,7 +47,7 @@ function Booking() {
       reason,
     };
 
-      fetch("http://clinic-dev.runasp.net/api/Appointments/book", {
+      fetch("http://clinicdev.runasp.net/api/Appointments/book", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -20,7 +20,7 @@ function AuthProvider({ children }) {
   }, [token]);
 
   const login = async (email, password) => {
-    const response = await fetch("http://clinic-dev.runasp.net/api/Auth/login", {
+    const response = await fetch("http://clinicdev.runasp.net/api/Auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -37,7 +37,7 @@ function AuthProvider({ children }) {
   };
 
   const register = async (fullName, email, password,birthDate,gender) => {
-    const response = await fetch("http://clinic-dev.runasp.net/api/Auth/register-patient", {
+    const response = await fetch("http://clinicdev.runasp.net/api/Auth/register-patient", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ fullName, email, password ,birthDate,gender}),

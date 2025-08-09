@@ -19,7 +19,7 @@ function BrowseDoctors() {
     async function fetchSpecializations() {
       try {
         const response = await fetch(
-          "http://clinic-dev.runasp.net/api/Specializations",
+          "http://clinicdev.runasp.net/api/Specializations",
           {
             method: "GET",
             headers: {
@@ -49,7 +49,7 @@ function BrowseDoctors() {
     async function fetchDoctors() {
       try {
         const response = await fetch(
-          "http://clinic-dev.runasp.net/api/Doctors/search",
+          "http://clinicdev.runasp.net/api/Doctors/search",
           {
             method: "GET",
             headers: {

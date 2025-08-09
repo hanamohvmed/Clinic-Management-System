@@ -4,7 +4,7 @@ import PatientBookings from './PatientBookings';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../../store/AuthContext';
 
-const BASE_URL = 'http://clinic-dev.runasp.net/api';
+const BASE_URL = 'http://clinicdev.runasp.net/api';
 const token = localStorage.getItem('token');
 
 const DoctorDashboard = () => {
@@ -253,7 +253,7 @@ const DoctorDashboard = () => {
                 <tbody>
                   {slots.map(slot => (
                     <tr key={slot.id} className={!slot.isActive ? 'not-available' : ''}>
-                      <td>{slot.date ? new Date(slot.date).toISOString().split("T")[0] : ""}</td>
+                      <td>{slot.date.substring(0,10)}</td>
                       <td>{slot.time || slot.startTime}</td>
                       <td>{slot.sessionMinutes || slot.sessionDuration}</td>
                       <td>{slot.maxPatients}</td>
