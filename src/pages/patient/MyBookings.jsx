@@ -45,16 +45,18 @@ const MyBookings = () => {
 
         const data = await response.json();
         console.log("API response:", data);
-        // Transform the API data to match the component's expected format
+
         const transformedBookings = data.map((appointment) => ({
           id: appointment.id,
           doctor: {
-            id: appointment.id, // Using appointment id as doctor id for now
+            id: appointment.id,
             name: appointment.doctorName,
-            specialty: "General Medicine", // Default specialty since not provided in API
-            avatarUrl: appointment.doctorProfileImage && appointment.doctorProfileImage !== "string"
-              ? appointment.doctorProfileImage
-              : "https://via.placeholder.com/40", // Fallback if missing or default
+            specialty: "General Medicine",
+            avatarUrl:
+              appointment.doctorProfileImage &&
+              appointment.doctorProfileImage !== "string"
+                ? appointment.doctorProfileImage
+                : "https://via.placeholder.com/40",
           },
           appointmentDateTime: `${appointment.slotDate}T${appointment.time}`,
           status: "confirmed",
@@ -79,14 +81,11 @@ const MyBookings = () => {
   }, [token]);
 
   const filteredBookings = bookings.filter((booking) => {
-    // Only frontend status matters
     const isCancelled = booking.status === "cancelled";
     let matchesFilter;
     if (filter === "upcoming") {
-      // Show all appointments not cancelled
       matchesFilter = !isCancelled;
     } else {
-      // Past: show only cancelled appointments
       matchesFilter = isCancelled;
     }
 
@@ -121,7 +120,6 @@ const MyBookings = () => {
     setBookingToCancel(null);
 
     try {
-      // Update local state immediately without waiting for API
       setBookings((prev) =>
         prev.map((booking) =>
           booking.id === bookingId
@@ -132,7 +130,6 @@ const MyBookings = () => {
 
       showToast("Your appointment has been cancelled.", "success");
 
-      // Optional: Still try to sync with backend but don't wait for it
       const headers = {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -143,7 +140,6 @@ const MyBookings = () => {
         headers,
       }).catch((error) => {
         console.log("Backend sync failed:", error);
-        // Don't show error to user since UI is already updated
       });
     } catch (error) {
       console.error("Error updating local state:", error);
@@ -159,7 +155,17 @@ const MyBookings = () => {
   };
 
   const formatDateTime = (dateTimeString) => {
-    const date = new Date(dateTimeString);
+    if (!dateTimeString) return "";
+    const [datePart, timePart] = dateTimeString.split("T");
+    if (!datePart || !timePart) return "Invalid date";
+    const [month, day, year] = datePart.split("/");
+
+    const isoString = `${year}-${month.padStart(2, "0")}-${day.padStart(
+      2,
+      "0"
+    )}T${timePart}`;
+    const date = new Date(isoString);
+    if (isNaN(date.getTime())) return "Invalid date";
     return (
       date.toLocaleDateString("en-US", {
         weekday: "long",
@@ -191,12 +197,10 @@ const MyBookings = () => {
   };
 
   const getUpcomingCount = () => {
-    // Count all appointments not cancelled
     return bookings.filter((booking) => booking.status !== "cancelled").length;
   };
 
   const getPastCount = () => {
-    // Count only cancelled appointments
     return bookings.filter((booking) => booking.status === "cancelled").length;
   };
 
