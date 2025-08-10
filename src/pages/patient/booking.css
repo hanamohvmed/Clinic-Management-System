@@ -1,143 +1,127 @@
 .booking-container {
-    max-width: 600px;
-    margin: auto;
-    padding: 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9fafb;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    border-radius: 8px;
-  }
-  
-  .h1 {
-    text-align: center;
-    color: #222;
-    font-size: 1.8rem;
-  }
-  
-  .label {
-    display: block;
-    margin-top: 1rem;
-    font-weight: 500;
-    font-size: 1rem;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 0.75rem;
-    margin-top: 0.3rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border 0.3s ease;
-  }
-  
-  .input:focus {
-    border-color: #1e90ff;
-    outline: none;
-  }
-  
-  textarea.input {
-    height: 100px;
-    resize: vertical;
-  }
-  
-  .button {
-    margin-top: 1.5rem;
-    width: 100%;
-    background-color: #1e90ff;
-    color: white;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #007bff;
-  }
-  
-  .confirmation-card {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.03);
-  }
-  
-  .confirmation-card h2 {
-    color: #111;
-    margin-bottom: 0.75rem;
-    font-size: 1.4rem;
-  }
-  
-  .confirmation-details {
-    margin: 1rem 0;
-    line-height: 1.6;
-    font-size: 1rem;
-  }
-  
-  /* ✅ Responsive Media Query */
-  @media (max-width: 768px) {
-    .booking-container {
-      padding: 1rem;
-    }
-  
-    .h1 {
-      font-size: 1.5rem;
-    }
-  
-    .label {
-      font-size: 0.95rem;
-    }
-  
-    .input,
-    .button {
-      font-size: 0.95rem;
-      padding: 0.65rem;
-    }
-  
-    .confirmation-card h2 {
-      font-size: 1.2rem;
-    }
-  
-    .confirmation-details {
-      font-size: 0.95rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .booking-container {
-      padding: 1rem 0.5rem;
-    }
-  
-    .h1 {
-      font-size: 1.3rem;
-    }
-  
-    .input,
-    .button {
-      font-size: 0.9rem;
-    }
-  
-    .confirmation-details {
-      font-size: 0.9rem;
-    }
-  }
-  
+  border-radius: 8px;
+  max-width: 530px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px #d2d2d2;
+}
 
-  .booking-container {
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+.h1 {
+  text-align: center;
+  color: #222;
+  font-size: 1.8rem;
+}
+
+.label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.input:focus {
+  border-color: #1e90ff;
+  outline: none;
+}
+
+textarea.input {
+  height: 100px;
+  resize: vertical;
+}
+
+.button {
+  margin-top: 1.5rem;
+  width: 100%;
+  background-color: #1e90ff;
+  color: white;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #007bff;
+}
+
+.confirmation-card {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+}
+
+.confirmation-card h2 {
+  color: #111;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+}
+
+.confirmation-details {
+  margin: 1rem 0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .h1 {
+    font-size: 1.5rem;
+  }
+
+  .label {
+    font-size: 0.95rem;
+  }
+
+  .input,
+  .button {
+    font-size: 0.95rem;
+    padding: 0.65rem;
+  }
+
+  .confirmation-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .confirmation-details {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .h1 {
+    font-size: 1.3rem;
+  }
+
+  .input,
+  .button {
+    font-size: 0.9rem;
+  }
+
+  .confirmation-details {
+    font-size: 0.9rem;
+  }
 }
 
 .booking-title {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .no-slots {
@@ -154,9 +138,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f7f7f7;
+  background: #f6f6f6;
   padding: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   border-radius: 6px;
 }
 
@@ -166,27 +150,34 @@
 }
 
 .book-btn {
-  background: #007bff;
+  background: var(--main-blue);
   color: white;
   border: none;
   padding: 6px 12px;
   border-radius: 4px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .book-btn:hover {
-  background: #0056b3;
+  background: #1477b8;
 }
 
 .booking-form {
-  margin-top: 20px;
+  margin: 15px 0px 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+form h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 10px 0px;
+}
+
 .booking-form label {
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .booking-form input,
@@ -199,30 +190,33 @@
 .form-actions {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 .confirm-btn {
-  background: #28a745;
+  background: #059669;
   color: white;
   border: none;
   padding: 8px 14px;
   border-radius: 4px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .confirm-btn:hover {
-  background: #1e7e34;
+  background: #046446;
 }
 
 .cancel-btn {
-  background: #dc3545;
+  background: #ff2626;
   color: white;
   border: none;
   padding: 8px 14px;
   border-radius: 4px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .cancel-btn:hover {
-  background: #a71d2a;
+  background: #c82333;
 }
