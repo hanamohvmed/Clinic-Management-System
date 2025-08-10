@@ -1,13 +1,13 @@
+:root {
+  --main-blue: #1993e5;
+}
 
 .dashboard-container {
   display: flex;
   height: 100vh;
   font-family: Arial, sans-serif;
   background-color: #f7f9fb;
-}
-.sidebar img {
-  margin: auto;
-  display: block;
+  font-family: "Poppins", sans-serif;
 }
 
 .sidebar {
@@ -15,7 +15,18 @@
   background-color: #eaf1f8;
   color: rgba(0, 0, 0, 0.829);
   padding: 20px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1477b8;
+  margin-bottom: 35px;
+}
+
+.sidebar .bio {
+  text-align: left;
 }
 
 .sidebar .profile {
@@ -23,10 +34,12 @@
 }
 
 .sidebar img {
-  border-radius: 80%;
-  margin-bottom: 12px;
+  margin: 15px auto;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 125px;
+  width: 130px;
 }
-
 
 .main-content {
   flex: 1;
@@ -34,17 +47,17 @@
   overflow-y: auto;
 }
 
-
 .section {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .section h2,
 .section h3 {
-  margin-bottom: 15px;
+  margin: 7px 0px 20px;
   color: #333;
+  font-size: 18px;
+  font-weight: 600;
 }
-
 
 .add-slot-form {
   display: flex;
@@ -56,7 +69,7 @@
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  width: 180px;
+  width: 215px;
   background-color: #fff;
   transition: 0.2s ease-in-out;
 }
@@ -67,8 +80,8 @@
 }
 
 .add-slot-form button {
-  padding: 8px 16px;
-  background-color: #138496;
+  padding: 8px 20px;
+  background-color: var(--main-blue);
   border: none;
   color: white;
   border-radius: 8px;
@@ -77,9 +90,8 @@
 }
 
 .add-slot-form button:hover {
-  background-color: #138496ce;
+  background-color: #1477b8;
 }
-
 
 table {
   width: 100%;
@@ -87,7 +99,7 @@ table {
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
 thead {
@@ -96,10 +108,16 @@ thead {
 
 th,
 td {
-  padding: 12px 15px;
+  padding: 15px 15px;
   text-align: left;
   border-bottom: 1px solid #eee;
   font-size: 14px;
+}
+th {
+  font-weight: 600;
+}
+td {
+  font-weight: 500;
 }
 
 tr.not-available {
@@ -125,10 +143,10 @@ tr.not-available {
   margin-right: 0;
 }
 
-
 .availability-actions button:nth-child(1) {
-  background-color: #ffc107;
+  background-color: #fac82b;
   color: #fff;
+  min-width: 35%;
 }
 
 .availability-actions button:nth-child(1):hover {
@@ -136,17 +154,16 @@ tr.not-available {
 }
 
 .availability-actions button:nth-child(2) {
-  /* background-color: #17a2b8; */
-  background-color: #138496;
+  background-color: var(--main-blue);
   color: #fff;
 }
 
 .availability-actions button:nth-child(2):hover {
-  background-color:#13849693 ;
+  background-color: #1477b8;
 }
 
 .availability-actions .cancel-btn {
-  background-color: #dc3545;
+  background-color: #ff2626;
   color: white;
 }
 
@@ -154,44 +171,43 @@ tr.not-available {
   background-color: #c82333;
 }
 
-
 .section ul {
   margin: 8px 0;
   padding-left: 20px;
 }
 
 .section ul li {
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 4px;
 }
-
- 
 
 .patient-booking-container {
   background-color: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
 }
 
 .patient-booking-container > div {
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  margin-bottom: 25px;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
   background-color: #f9fcff;
 }
 
 .patient-booking-container strong {
   display: block;
-  margin-bottom: 8px;
-  color: #37568D;
-  font-size: 15px;
+  margin-bottom: 10px;
+  color: #1477b8;
+  font-size: 16px;
 }
 
 .patient-booking-container ul {
   margin: 0;
   padding-left: 20px;
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .patient-booking-container li {
@@ -209,17 +225,16 @@ tr.not-available {
   font-style: italic;
 }
 
-
 .nav-links {
-  margin-top: 20px;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .nav-links button {
   padding: 8px;
-  background-color: #138496;
+  background-color: var(--main-blue);
   color: white;
   border: none;
   border-radius: 6px;
@@ -228,11 +243,11 @@ tr.not-available {
 }
 
 .nav-links button:hover {
-  background-color: #0f6d7a;
+  background-color: #1477b8;
 }
 
 .nav-links button.active {
-  background-color: #0c5862;
+  background-color: #1477b8;
 }
 
 .no-bookings {
@@ -240,26 +255,39 @@ tr.not-available {
   border-left: 5px solid #ffc107;
 }
 
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(38%) sepia(90%) saturate(550%) hue-rotate(180deg);
+  cursor: pointer;
+  font-size: 20px;
+}
+.logout-btn {
+  margin-top: 5px;
+  background-color: white !important;
+  color: var(--main-blue) !important;
+  border: 2px solid var(--main-blue) !important;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.logout-btn:hover {
+  background-color: #1477b8 !important;
+  color: white !important;
+  border: 2px solid #1477b8 !important;
+}
 
-
-@media (max-width: 768px) {
+@media (max-width: 935px) {
   .dashboard-container {
     flex-direction: column;
   }
 
   .sidebar {
     width: 100%;
-    text-align: center;
-    box-shadow: none;
-    padding: 10px;
   }
   .sidebar img {
-    margin: auto;
-    display: block;
+    margin: 20px auto;
   }
 
   .main-content {
-    padding: 15px;
+    min-width: 100%;
   }
 
   .add-slot-form {
@@ -273,12 +301,12 @@ tr.not-available {
   }
 
   .availability-actions {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    gap: 6px;
+    justify-content: flex-start;
   }
-
-  .availability-actions button {
-    margin-right: 0;
+  .availability-actions button:nth-child(1) {
+    min-width: 25%;
   }
 
   table,
@@ -300,9 +328,20 @@ tr.not-available {
 
   .nav-links button {
     flex: 1 1 40%;
+    margin-bottom: 5px;
   }
-}
 
-.logout-btn{
-  
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    padding: 10px;
+  }
 }
