@@ -26,14 +26,14 @@ function Home() {
               to={"doctors-list"}
               className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-sky-500 hover:bg-[#1477b8] focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 duration-200"
             >
-              Book Appointment
+              Book a doctor
             </Link>
-            <a
-              href="#"
+            <Link
+              to={"my-bookings"}
               className="inline-flex items-center justify-center px-5 py-3 text-base font-medium bg-white text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 duration-200"
             >
-              Contact Support
-            </a>
+              My Appointments
+            </Link>
           </div>
         </div>
       </section>

@@ -24,7 +24,7 @@ export default function RegisterForm() {
       );
 
       actions.resetForm();
-      navigate("/home");
+      navigate("/login");
     } catch (error) {
       console.error("Error:", error.message);
     }
