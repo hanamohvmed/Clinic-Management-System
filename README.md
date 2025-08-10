@@ -48,12 +48,17 @@ Ensures secure registration, login, and session management for patients and doct
 - **Login Schema**: Email + password rules.
 - **Registration Schema**: Full name, birth date, gender, email, password, confirmation.
 
+### 1.5 Accessibility Features 
+- **ARIA attributes**: for visually impaired users
+- **roles**
+
 **Highlights**:
 ✅ JWT-based authentication  
 ✅ Role-based routing  
 ✅ Persistent sessions  
 ✅ Real-time validation  
 ✅ Password visibility toggle  
+✅ Accessibility for visually impaired users
 
 ---
 
